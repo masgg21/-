@@ -1,4 +1,4 @@
-package 鍐掓场鎺掑簭;
+package 冒泡排序;
 
 import java.net.StandardSocketOptions;
 import java.util.HashMap;
@@ -6,9 +6,14 @@ import java.util.Iterator;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Set;
-
+/**
+ * @author loveqi
+ * @time   2018-1-27
+ * 冒泡排序算法
+ */
 public class Bubble_sort {
 	public static void main(String[] args) {
+		long startTime = System.currentTimeMillis();//获取当前时间
 		int a[]= {1,3,9,5,8,22,20,17,30};
         boolean flag =true;
         while(flag) {
@@ -28,7 +33,14 @@ public class Bubble_sort {
         		 }
       		}
 		}
+        long endTime = System.currentTimeMillis();
+        System.out.println("程序运行时间："+(endTime-startTime)+"ms");
 	}
+	/**
+	 * 判断是否需要继续进行排序
+	 * @param map
+	 * @return
+	 */
 	public static boolean pp(Map map) {
 		Iterator<Entry<Integer,int[]>> iter=map.entrySet().iterator();
 		Integer b=0;
@@ -45,6 +57,11 @@ public class Bubble_sort {
 		}
 		return flag;
 	}
+	/**
+	 * 对数组进行一次排序
+	 * @param a
+	 * @return
+	 */
 	public static Map<Integer,int[]> Bubblesort(int[] a) {
 		Map<Integer,int[]> map=new HashMap<>();
 		Integer b=0;
